@@ -1,0 +1,1004 @@
+<title>網路行銷備課大綱</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Noto+Serif+TC:wght@600;700;900&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    color-scheme: light;
+    --surface:     #f9f9f7;
+    --card:        #fcfcfb;
+    --ink:         #0b0b0b;
+    --ink-2:       #52514e;
+    --ink-muted:   #898781;
+    --hairline:    #e1e0d9;
+    --border:      rgba(11,11,11,0.10);
+    --accent-ring: #c23a3a;
+    --accent-bg:   #fbeceb;
+
+    --c1: #2a78d6; --c1-tint: #eaf1fb;
+    --c2: #d1592a; --c2-tint: #fbeee7;
+    --c3: #14966a; --c3-tint: #e7f5ef;
+    --c4: #b8860a; --c4-tint: #faf3df;
+    --c5: #c14a78; --c5-tint: #fbedf2;
+    --c6: #2f7a2f; --c6-tint: #edf5ec;
+    --c7: #5b4ea3; --c7-tint: #eeecf9;
+    --c8: #4d6b80; --c8-tint: #eaf0f3;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      color-scheme: dark;
+      --surface:     #0d0d0d;
+      --card:        #1a1a19;
+      --ink:         #ffffff;
+      --ink-2:       #c3c2b7;
+      --ink-muted:   #898781;
+      --hairline:    #2c2c2a;
+      --border:      rgba(255,255,255,0.12);
+      --accent-ring: #e66767;
+      --accent-bg:   #2a1615;
+
+      --c1: #3987e5; --c1-tint: #14202f;
+      --c2: #d95926; --c2-tint: #2a1c10;
+      --c3: #199e70; --c3-tint: #0f2620;
+      --c4: #c98500; --c4-tint: #2a2110;
+      --c5: #d55181; --c5-tint: #2a151e;
+      --c6: #3fb53f; --c6-tint: #142616;
+      --c7: #9085e9; --c7-tint: #1c1930;
+      --c8: #8fa3b8; --c8-tint: #16222a;
+    }
+  }
+  :root[data-theme="dark"] {
+    color-scheme: dark;
+    --surface:     #0d0d0d;
+    --card:        #1a1a19;
+    --ink:         #ffffff;
+    --ink-2:       #c3c2b7;
+    --ink-muted:   #898781;
+    --hairline:    #2c2c2a;
+    --border:      rgba(255,255,255,0.12);
+    --accent-ring: #e66767;
+    --accent-bg:   #2a1615;
+
+    --c1: #3987e5; --c1-tint: #14202f;
+    --c2: #d95926; --c2-tint: #2a1c10;
+    --c3: #199e70; --c3-tint: #0f2620;
+    --c4: #c98500; --c4-tint: #2a2110;
+    --c5: #d55181; --c5-tint: #2a151e;
+    --c6: #3fb53f; --c6-tint: #142616;
+    --c7: #9085e9; --c7-tint: #1c1930;
+    --c8: #8fa3b8; --c8-tint: #16222a;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--surface);
+    color: var(--ink);
+    font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", system-ui, sans-serif;
+  }
+  h1, h2, h3 { font-family: "Noto Serif TC", "Noto Sans TC", serif; }
+
+  a { color: inherit; }
+
+  #topbar {
+    position: sticky; top: 0; z-index: 20;
+    background: color-mix(in oklab, var(--card) 92%, transparent);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--hairline);
+  }
+  .topbar-inner {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 14px 24px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+  .brand { display: flex; flex-direction: column; gap: 1px; margin-right: 6px; }
+  .brand .name { font-size: 15px; font-weight: 900; font-family: "Noto Serif TC", serif; }
+  .brand .sub { font-size: 11px; color: var(--ink-muted); font-variant-numeric: tabular-nums; }
+
+  .search-wrap { position: relative; flex: 1 1 180px; min-width: 140px; max-width: 260px; }
+  .search-wrap input {
+    width: 100%;
+    padding: 7px 12px 7px 30px;
+    border-radius: 8px;
+    border: 1px solid var(--hairline);
+    background: var(--surface);
+    color: var(--ink);
+    font-family: inherit;
+    font-size: 13px;
+    outline: none;
+  }
+  .search-wrap input:focus { border-color: var(--c1); }
+  .search-wrap svg { position: absolute; left: 9px; top: 50%; transform: translateY(-50%); opacity: 0.5; pointer-events: none; }
+
+  .toolbtn {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 7px 12px; border-radius: 8px;
+    border: 1px solid var(--hairline);
+    background: var(--surface); color: var(--ink-2);
+    font-family: inherit; font-size: 12.5px; font-weight: 500;
+    cursor: pointer; white-space: nowrap;
+  }
+  .toolbtn:hover { border-color: var(--ink-muted); color: var(--ink); }
+  .toolbtn.active { background: var(--accent-bg); border-color: var(--accent-ring); color: var(--accent-ring); }
+
+  .jumpnav { display: flex; gap: 6px; flex-wrap: wrap; margin-left: auto; }
+  .jumpchip {
+    display: inline-flex; align-items: center; gap: 5px;
+    padding: 5px 9px; border-radius: 999px;
+    border: 1px solid var(--hairline);
+    background: var(--surface);
+    font-family: inherit;
+    font-size: 11.5px; font-weight: 700;
+    text-decoration: none;
+    color: var(--ink-2);
+    white-space: nowrap;
+    cursor: pointer;
+  }
+  .jumpchip .dot { width: 8px; height: 8px; border-radius: 50%; flex: none; }
+  .jumpchip:hover { border-color: var(--ink-muted); color: var(--ink); }
+  .jumpchip.active { background: var(--ink); border-color: var(--ink); color: var(--card); }
+  .jumpchip.active .dot { outline: 2px solid var(--card); outline-offset: 1px; }
+
+  #page { max-width: 980px; margin: 0 auto; padding: 28px 24px 80px; }
+
+  .hero { margin-bottom: 26px; }
+  .hero .eyebrow {
+    font-size: 11.5px; font-weight: 700; letter-spacing: 0.08em;
+    text-transform: uppercase; color: var(--ink-muted); margin-bottom: 8px;
+  }
+  .hero h1 { font-size: 26px; font-weight: 900; margin: 0 0 8px; line-height: 1.3; text-wrap: balance; }
+  .hero p { font-size: 14px; color: var(--ink-2); line-height: 1.8; max-width: 62ch; margin: 0; }
+
+  .plan-table {
+    margin-top: 22px;
+    border: 1px solid var(--hairline);
+    border-radius: 12px;
+    overflow: hidden;
+    background: var(--card);
+  }
+  .plan-row {
+    display: grid;
+    grid-template-columns: 22px 1.4fr 62px 78px 62px 58px 78px;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    border-top: 1px solid var(--hairline);
+    font-size: 12.5px;
+    text-decoration: none;
+    color: var(--ink);
+  }
+  .plan-row:first-child { border-top: none; background: color-mix(in oklab, var(--ink) 4%, var(--card)); font-weight: 700; color: var(--ink-muted); font-size: 11px; letter-spacing: .03em; }
+  .plan-row:not(:first-child):hover { background: color-mix(in oklab, var(--ink) 3%, var(--card)); }
+  .plan-row .dot { width: 10px; height: 10px; border-radius: 50%; }
+  .plan-row .name { font-weight: 700; }
+  .plan-row .num { font-variant-numeric: tabular-nums; text-align: right; color: var(--ink-2); }
+  .plan-row .hours-cell { font-weight: 700; color: var(--ink); }
+  .plan-row:first-child .hours-cell { font-weight: 700; color: var(--ink-muted); }
+  .weightbar { grid-column: 1 / -1; height: 6px; border-radius: 4px; background: var(--hairline); overflow: hidden; margin: 0 16px 12px; display: flex; }
+  .weightbar span { height: 100%; }
+
+  .hours-wrap {
+    display: flex; align-items: center; gap: 8px;
+    margin: 18px 0 -6px;
+    font-size: 12.5px; color: var(--ink-2);
+  }
+  .hours-wrap input {
+    width: 64px;
+    padding: 5px 8px;
+    border-radius: 7px;
+    border: 1px solid var(--hairline);
+    background: var(--card);
+    color: var(--ink);
+    font-family: inherit;
+    font-size: 12.5px;
+    font-variant-numeric: tabular-nums;
+  }
+  .hours-wrap input:focus { outline: none; border-color: var(--c1); }
+
+  .unit {
+    margin-top: 44px;
+    scroll-margin-top: 84px;
+  }
+  .unit-head {
+    display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap;
+    padding-bottom: 14px; margin-bottom: 18px;
+    border-bottom: 3px solid var(--u-color);
+  }
+  .unit-head .idx {
+    font-family: "Noto Serif TC", serif;
+    font-size: 13px; font-weight: 700; color: var(--u-color);
+    border: 1.5px solid var(--u-color); border-radius: 50%;
+    width: 26px; height: 26px; display: flex; align-items: center; justify-content: center;
+    flex: none;
+  }
+  .unit-head h2 { font-size: 20px; font-weight: 900; margin: 0; flex: 1 1 auto; min-width: 200px; }
+  .unit-meta { font-size: 12px; color: var(--ink-muted); font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .unit-copy {
+    border: 1px solid var(--hairline); background: var(--card); color: var(--ink-2);
+    border-radius: 7px; padding: 5px 10px; font-size: 11.5px; cursor: pointer; font-family: inherit;
+  }
+  .unit-copy:hover { border-color: var(--u-color); color: var(--u-color); }
+
+  .subgrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+  .unit.single .subgrid { grid-template-columns: repeat(3, 1fr); }
+  @media (max-width: 900px) { .unit.single .subgrid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 700px) { .subgrid, .unit.single .subgrid { grid-template-columns: 1fr; } }
+
+  .back-to-overview {
+    display: none;
+    align-items: center;
+    gap: 6px;
+    font-size: 12.5px;
+    font-weight: 700;
+    color: var(--ink-muted);
+    background: none;
+    border: none;
+    font-family: inherit;
+    cursor: pointer;
+    padding: 0 0 16px;
+  }
+  .back-to-overview:hover { color: var(--ink); }
+  body.tab-single .back-to-overview { display: inline-flex; }
+  body.tab-single #plan-table, body.tab-single .hero, body.tab-single .hours-wrap { display: none; }
+
+  .subcard {
+    background: var(--u-tint);
+    border: 1px solid color-mix(in oklab, var(--u-color) 30%, var(--hairline));
+    border-radius: 12px;
+    padding: 14px 16px;
+  }
+  .subcard h3 {
+    font-size: 13.5px; font-weight: 700; margin: 0 0 10px;
+    color: var(--ink);
+    font-family: "Noto Sans TC", sans-serif;
+  }
+  .subcard ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 7px; }
+  .subcard li { font-size: 12.5px; line-height: 1.6; color: var(--ink-2); }
+  .subcard li b { color: var(--ink); font-weight: 700; }
+  .subcard li .star { color: var(--accent-ring); margin-right: 2px; }
+  .subcard li.hot { background: var(--accent-bg); margin: 0 -8px; padding: 4px 8px; border-radius: 6px; }
+
+  .pt-row { position: relative; }
+  .subcard li.expandable { cursor: pointer; }
+  .subcard li.expandable:hover .pt-row { background: color-mix(in oklab, var(--u-color) 8%, transparent); }
+  .subcard li.expandable:focus-visible { outline: 2px solid var(--u-color); outline-offset: 2px; border-radius: 5px; }
+  .subcard li.expandable .pt-row {
+    padding: 2px 44px 2px 4px;
+    margin: -2px -4px;
+    border-radius: 6px;
+  }
+  .expand-mark {
+    position: absolute; right: 0; top: 50%;
+    transform: translateY(-50%);
+    display: inline-flex; align-items: center; gap: 3px;
+    color: var(--u-color);
+    background: color-mix(in oklab, var(--u-color) 14%, transparent);
+    border-radius: 999px;
+    padding: 1px 7px 1px 6px;
+    font-size: 10px;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+  .expand-mark .chev { display: inline-block; transition: transform 0.15s ease; }
+  .subcard li.expanded .expand-mark .chev { transform: rotate(180deg); }
+
+  .subcard li .sub-terms {
+    list-style: none;
+    margin: 8px 0 0;
+    padding: 8px 0 2px 12px;
+    border-left: 2px solid color-mix(in oklab, var(--u-color) 45%, var(--hairline));
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .subcard li.expanded .sub-terms { display: flex; }
+  .subcard .sub-terms li { font-size: 12px; color: var(--ink-2); cursor: default; }
+  .subcard .sub-terms li b { color: var(--u-color); font-weight: 700; }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .expand-mark { transition: transform 0.15s ease; }
+  }
+
+  li.pt-dim { opacity: 0.28; }
+  li.pt-match { outline: 2px solid var(--c1); outline-offset: 2px; border-radius: 5px; }
+
+  #no-results { display: none; text-align: center; color: var(--ink-muted); font-size: 13px; padding: 60px 0; }
+
+  footer {
+    max-width: 980px; margin: 40px auto 0; padding: 20px 24px 40px;
+    border-top: 1px solid var(--hairline);
+    font-size: 11.5px; color: var(--ink-muted); line-height: 1.9;
+  }
+
+  @media print {
+    #topbar { position: static; }
+    .jumpnav, .search-wrap, #btn-hot, #btn-copyall, .unit-copy, #btn-expand-terms, .hours-wrap { display: none !important; }
+    .expand-mark { display: none !important; }
+    .subcard li .sub-terms { display: flex !important; }
+    body { background: #fff; color: #000; }
+    body.tab-single #plan-table, body.tab-single .hero, body.tab-single .hours-wrap { display: none; }
+  }
+</style>
+
+<div id="topbar">
+  <div class="topbar-inner">
+    <div class="brand">
+      <div class="name" id="brand-name">備課大綱</div>
+      <div class="sub" id="stat-line">載入中…</div>
+    </div>
+    <div class="search-wrap">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+      <input id="search" type="text" placeholder="搜尋知識點、專有名詞…" autocomplete="off">
+    </div>
+    <button class="toolbtn" id="btn-hot">★ 只看易混淆重點</button>
+    <button class="toolbtn" id="btn-expand-terms">▾ 展開全部名詞說明</button>
+    <button class="toolbtn" id="btn-copyall">複製全部大綱</button>
+    <nav class="jumpnav" id="jumpnav"></nav>
+  </div>
+</div>
+
+<div id="page">
+  <button class="back-to-overview" id="btn-back">← 回總覽</button>
+  <div class="hero">
+    <div class="eyebrow" id="hero-eyebrow">備課參考</div>
+    <h1 id="hero-title">把題庫整理成可以直接拿去排課的大綱</h1>
+    <p id="hero-desc"></p>
+  </div>
+
+  <div class="hours-wrap">
+    <label for="hours-input">總授課時數</label>
+    <input type="number" id="hours-input" min="0" step="0.5" placeholder="例如 18">
+    <span>小時 → 下表自動換算各單元建議時數</span>
+  </div>
+  <div class="plan-table" id="plan-table"></div>
+
+  <div id="units"></div>
+  <div id="no-results">沒有符合「<span id="no-results-q"></span>」的知識點</div>
+
+  <footer id="page-footer"></footer>
+</div>
+
+<script>
+(function () {
+  "use strict";
+
+  var CONFIG = {
+    pageTitle: "網路行銷備課大綱",
+    courseName: "【EEC】網路行銷(114/115)",
+    courseCode: "MKP25",
+    heroTitle: null,
+    heroDesc: null,
+    sourceNote: "CSF 雲端練功坊「網路行銷」練習題庫"
+  };
+
+  var DATA = [
+    {
+      name: "行銷概念", short: "行銷概念", count: 40, key: "c1",
+      subtopics: [
+        { name: "行銷基礎定義與觀念演進", points: [
+          ["行銷正式定義", "個人與團體透過創造、提供、與他人自由交換有價值產品和服務的社會過程；另有AMA式定義：創造、溝通與傳送價值給顧客、經營顧客關係，讓組織及利益關係人受益的組織功能與程序。兩者皆為正解，勿與「銷售」定義混淆。", 1],
+          ["行銷觀念五種導向", "生產導向、產品導向、銷售導向（消費者被動需主動推銷）、社會行銷導向（兼顧社會長期利益）、市場導向（最重要的觀點）。", 1],
+          ["行銷組合4P起源", "Jerome McCarthy教授1964年提出：產品Product、價格Price、通路Place、推廣Promotion。", 1],
+          ["行銷4C", "Robert Lauterborn教授1991年提出，以消費者立場思考：消費者需求Consumer's needs、成本Cost、便利性Convenience、溝通Communication。", 1],
+          ["4P對4C對應關係", "Product-消費者需求／Price-物超所值Cost／Place-便利性Convenience／Promotion-溝通Communication，考題常故意錯置配對。", 1, [
+            ["Product → Consumer's needs", "產品要對應消費者真正的需求。"],
+            ["Price → Cost", "價格要對應消費者感受的成本（物超所值）。"],
+            ["Place → Convenience", "通路要對應消費者購買的便利性。"],
+            ["Promotion → Communication", "推廣要對應與消費者的溝通。"]
+          ]],
+          ["行銷5C", "在4C基礎上多增加「社群」Community，因網路社群影響力擴大。", 0]
+        ]},
+        { name: "STP策略與市場區隔", points: [
+          ["STP流程", "市場區隔Segmentation→選擇目標市場Targeting→定位Positioning。", 1, [
+            ["Segmentation 市場區隔", "把整體市場依變數切分成不同的區隔。"],
+            ["Targeting 選擇目標市場", "從區隔中選出企業要鎖定的目標客群。"],
+            ["Positioning 定位", "決定品牌／產品在目標客群心中要佔據的位置。"]
+          ]],
+          ["市場區隔四大變數", "人口統計變數（年齡/性別/所得）；地理統計變數（國家/區域/氣候）；心理統計變數（人格/生活型態/價值觀）；行為特性變數（追求利益/使用時機/品牌忠誠度）。", 1],
+          ["區隔效果評估準則", "可衡量性（如「左撇子市場」因資料難取得而可衡量性差）、足量性、可接近性、差異反應。", 1],
+          ["TA目標受眾完整描述", "需含人群洞見描述，如「30歲喜網購女性」，而非天氣/飲料/交通工具描述。", 0],
+          ["定位 Positioning 核心概念", "定位結果由消費者主觀認知決定，非行銷人員自行認定；環境變化下品牌可能需要重定位；利基市場仍有競爭者，並非零競爭。", 1]
+        ]},
+        { name: "品牌權益與品牌管理", points: [
+          ["品牌權益五大因素", "品牌知名度、品牌聯想、品牌忠誠度、顧客感受的品質、其他專有品牌資產；不含「品牌名稱」「企業認知的價格」這類陷阱選項。", 1],
+          ["品牌權益判定主體", "由顧客角度判斷，非企業自己或市場環境認定。", 0],
+          ["品牌權益具體效益", "高知名度與忠誠度可降低行銷成本、創造競爭優勢；品牌權益是無形資產。", 0],
+          ["品牌形象定義", "消費者心目中對特定品牌的整體印象。", 0],
+          ["品牌危機處理案例", "塑化劑事件：官方公告回收機制、邀媒體參觀工廠強調食安＝正確做法；降價促銷、蒐集網路言論控訴質疑者＝錯誤做法。", 1],
+          ["品牌歸屬類型", "製造商品牌Manufacturer's brand／中間商品牌或經銷商品牌Private-Dealer brand（如家樂福、7-SELECT、Kirkland）／無品牌Generic product。", 1]
+        ]},
+        { name: "產品生命週期與SWOT分析", points: [
+          ["產品生命週期四階段", "導入期（新產品剛進入市場）／成長期（快速成長）／成熟期（需求飽和）／衰退期（銷售衰退）。", 1],
+          ["市場修正案例判讀", "如嬰兒洗髮精打入成人市場，屬產品生命週期中的成熟期市場修正。", 0],
+          ["SWOT分析架構", "優勢Strengths／劣勢Weaknesses／機會Opportunities／威脅Threats，內外部交互影響。", 0],
+          ["SWOT交叉策略代號", "Mini-Maxi策略＝利用外部機會克服本身弱點；四種交叉策略常以代號TO／TW／WO／WS表示，考題常直接考代號本身。", 1, [
+            ["TO", "利用優勢Strengths把握機會Opportunities的策略。"],
+            ["WO", "利用機會Opportunities克服弱點Weaknesses的策略（Mini-Maxi）。"],
+            ["TW", "利用優勢Strengths迴避威脅Threats的策略。"],
+            ["WS（WT）", "設法減少弱點並迴避威脅的防禦型策略。"]
+          ]]
+        ]},
+        { name: "消費者行為與長尾理論", points: [
+          ["消費者購買行為三大影響因素", "經濟環境、個人過往經驗與特性、廠商的行銷行為；不含「瀏覽商品紀錄」這種細節干擾項。", 1],
+          ["長尾理論核心概念", "適合描述博客來、momo等網站商業模式；98%的商品都能創造銷售收入（非常見錯誤數字「70%」）；長尾表現平平的產品仍應保留。", 1]
+        ]},
+        { name: "行銷策略規劃活動", points: [
+          ["行銷策略規劃五大活動內容", "市場區隔、定義目標市場、發展4P行銷組合、分析消費者行為等，構成完整策略規劃流程。", 0]
+        ]}
+      ]
+    },
+    {
+      name: "網路市場與消費者", short: "市場消費者", count: 60, key: "c2",
+      subtopics: [
+        { name: "Web發展史與世代演進", points: [
+          ["Web 1.0 vs 2.0 vs 3.0", "基礎架構Client/Server→Web Services；行為模式僅能下載閱讀→可上傳分享；商業模式賣產品→提供服務。", 1],
+          ["Web2.0七大原則", "開放平台、集體智慧（案例：Yahoo!分類目錄、Google鏈接結構+機器學習、eBay促成買賣雙方、Amazon多元參與）、資料是下個Intel Inside、軟體發佈週期終結、輕量型程式設計模型、軟體超越單一設備、豐富用戶體驗。", 1],
+          ["Web3.0說明", "服務導向結構及語義網結合、多元網路環境、AI應用；輕量型程式設計模型是Web2.0精神非3.0，常考陷阱。", 1],
+          ["網際網路發展史雛形排序", "Galactic Network 1962→ARPANET 1968→CSNET 1980s→NREN 1990s。", 0],
+          ["物聯網IoT定義", "「物」與「物」相連的網際網路，非「人與物」。", 0],
+          ["網際網路基礎知識", "DNS取代IP位置記憶；通訊協定為TCP/IP，NCP為陷阱選項。", 0]
+        ]},
+        { name: "網路行銷定義與運作模式", points: [
+          ["網路行銷正式定義", "利用網際網路進行商品議價、推銷、推廣及服務，以達成企業目標。", 0],
+          ["前端行銷vs後端平台配對", "前端行銷=網路廣告/電子報/部落格/社群/網路媒體；後端平台=會員管理系統/電子商務/官方網站，常考四選一組合陷阱。", 1],
+          ["網路行銷可達成目標", "提高品牌價值、促進消費者互動、新商品行銷、收集分析潛在需求、通路整合、經營企業形象。", 0],
+          ["網路行銷帶來的影響", "無「廣告獨白」，那是傳統行銷特色。", 0],
+          ["Hanson 2001網路行銷架構", "資訊科技IT、行銷、商業，無社群。", 0]
+        ]},
+        { name: "消費者行為模式 AIDA／AISDAS／EKB", points: [
+          ["AIDA→AISDAS模式", "新增兩個S：Search搜尋＋Share分享，順序為A-I-S-D-A-S；另有相似但不同的AISAS模型（A-I-S-A-S，無D），兩者常混淆。", 1, [
+            ["AISDAS", "Attention-Interest-Search-Desire-Action-Share，六階段模型。"],
+            ["AISAS", "Attention-Interest-Search-Action-Share，五階段模型，與AISDAS少一個Desire階段。"]
+          ]],
+          ["EKB購買決策五階段", "問題認知→資訊尋求→方案評估→購買選擇→購後行為。", 0],
+          ["消費者知覺選擇性", "選擇性注意Selective Attention／選擇性扭曲Selective Distortion／選擇性展露Selective Exposure／選擇性記憶Selective Retention，「與刻板印象吻合」對應選擇性記憶。", 1, [
+            ["選擇性注意 Selective Attention", "只留意與自己相關或感興趣的資訊。"],
+            ["選擇性扭曲 Selective Distortion", "把接收到的資訊解讀成符合自己既有信念的樣子。"],
+            ["選擇性展露 Selective Exposure", "主動選擇接觸符合自己偏好的資訊來源。"],
+            ["選擇性記憶 Selective Retention", "只記得與自己既有印象或刻板印象吻合的資訊。"]
+          ]],
+          ["網路人口特質", "自我主張、隨興好奇、喜好參與、立即回應、質疑權威、社群導向、具世界觀。", 0],
+          ["消費者行為近代轉變", "行動裝置使用增加、資訊碎片化、越來越依賴搜尋引擎；主動搜尋比例其實降低，被動資訊餵養提高。", 0]
+        ]},
+        { name: "社群媒體與社群經營", points: [
+          ["社群媒體分類", "利基型：特定愛好聚集如Mobile01/巴哈姆特；交誼型：社交目的；平台型：單純分享討論；交易型。", 1],
+          ["社群四大構面", "會員關係=歸屬感認同感、影響力、需求整合及滿足、情感分享連結。", 0],
+          ["社群參與者類型", "瀏覽者Explorers/社交者Socializers/主動者Achievers/搗蛋者Killers，參與度最小為瀏覽者。", 0],
+          ["社群媒體收入來源", "不可販售會員個資，違反個資法。", 0],
+          ["IG特性", "視覺化行銷平台，主要以手機非桌機為主。", 0],
+          ["Clubhouse", "語音社交軟體，可傳送影片文字為錯誤敘述。", 0],
+          ["Podcast", "音訊影片文字列表形式發布，可下載串流。", 0]
+        ]},
+        { name: "網路行銷工具與媒體類型", points: [
+          ["媒體分類", "自有Own/付費Paid/社群Social；Rich Media多媒體廣告非媒體分類，是陷阱選項。", 0],
+          ["電子郵件特性", "可寄送文字圖片影音超連結所有類型媒體，企業依賴度最高。", 0],
+          ["網域類型", "gov.tw政府單位／edu.tw教育／idv.tw個人／net.tw網路支援中心。", 0],
+          ["LBS/BBS/NFC/RFID辨析", "LBS依行動裝置位置提供加值服務。", 0],
+          ["瀏覽器辨識", "Edge/Chrome/Safari為瀏覽器；Facebook是社群網站非瀏覽器。", 0]
+        ]},
+        { name: "數位行銷新興概念", points: [
+          ["SoLoMo", "Social社群性、Local適地性、Mobile行動性。", 1],
+          ["行銷4C到5C", "第5個C為Community社群。", 0],
+          ["RWD響應式網頁設計", "多屏時代必要考量。", 0],
+          ["程序化購買 Programmatic Buying", "與AI發展相關，仍需人性觀察，RTB即時競價是特色之一。", 0],
+          ["新零售與O2O", "新零售由馬雲提出，非馬化騰；O2O=線上到線下。", 0],
+          ["網路外部性效果", "梅特卡夫法則Metcalfe's Law：網路價值等於節點數平方。", 1],
+          ["電商型態辨識", "B2C/B2B/C2C/C2B，個人賣家對個人拍賣屬C2C。", 0]
+        ]},
+        { name: "資料驅動行銷應用", points: [
+          ["資料探勘 Data Mining 目標", "修正行銷組合、預測購買時間點、發現新商機；無法找到無瀏覽記錄的潛在消費者。", 0],
+          ["生活型態行銷案例", "月光族＝生活型態概念，非宅經濟或e世代族群；另有年齡分眾行銷案例：薰衣草-45歲以上／即溶牛奶-25~45歲／龍舌蘭-25歲以下／病毒式行銷-全年齡。", 0]
+        ]}
+      ]
+    },
+    {
+      name: "網路行銷規劃", short: "行銷規劃", count: 90, key: "c3",
+      subtopics: [
+        { name: "網路行銷規劃流程與原則", points: [
+          ["五步驟規劃流程", "市場情勢分析找出商機→選擇目標受眾及定位→決定創意及差異化內容→規劃行銷內容/刊登媒體與預算→效益評估及行銷修正，順序常考排列題。", 1],
+          ["Mohammed七大步驟", "分析市場機會→擬定網路行銷策略→設計與管理顧客經驗→規劃與設計顧客介面→擬定網路行銷行動計畫→善用科技整合顧客資料→評估執行成效，跟五步驟版本不同，別混用。", 1],
+          ["5M廣告規劃原則", "Mission任務、Message訊息、Media媒體、Money預算、Measurement衡量；「Manage」「More」是干擾選項。", 1],
+          ["行銷5C中的Communication", "使病毒式/口碑行銷更容易的是「Communication」（非Consumer/Convenience/Community）。", 0],
+          ["網路行銷操作四原則", "以顧客為中心、傳遞產品承諾、串連人脈網絡、享受品牌體驗；不含「與傳統媒體合作」。", 0]
+        ]},
+        { name: "病毒式行銷與口碑行銷辨析（核心易混淆）", points: [
+          ["病毒式行銷特色", "訊息「接收者」自願成為「傳播者」；非利用程式病毒植入電腦；不限於email轉寄；又稱核爆式行銷。", 1],
+          ["病毒式行銷操作步驟", "1.確定傳播訊息→2.創造話題→3.選擇適當媒體→4.監看成效。", 1],
+          ["話題內容類型", "有用的/有趣的/方便的/簡單的；「懶人包」屬於「有用的」資訊，不是感人話題。", 1],
+          ["口碑行銷 Word of Mouth 定義", "非正式溝通、來源為親友/意見領袖/專業社群，可信度高。", 0],
+          ["口碑行銷對現有vs潛在顧客差異化", "現有顧客：了解消費經驗/提高滿意度忠誠度；潛在顧客：強化正面印象/消除購買風險不確定感，兩者常考錯置配對。", 1, [
+            ["對現有顧客", "了解消費經驗、提高滿意度與忠誠度。"],
+            ["對潛在顧客", "強化正面印象、消除購買風險與不確定感。"]
+          ]],
+          ["網路口碑操作正確做法", "負面言論消毒澄清、持續監控平台、即時回應質疑；絕不可用寫手捏造不實口碑。", 1],
+          ["網路口碑行銷重要性數字", "Andy Sernovite統計：約20%口碑在網路發生，但會引發80%實體面對面談論；另有100位消費者中平均44人因負評打消購買念頭；2009年調查9成信朋友評價、7成信網友評價。", 1],
+          ["許可式行銷 Permission Marketing", "消費者事先同意才發送行銷訊息的行銷方式，常是病毒式行銷題目中的干擾選項。", 0]
+        ]},
+        { name: "內容行銷手法辨析", points: [
+          ["部落格行銷特色", "個人化、分享性、知識性；不含「高度精準一對一溝通」；規模較小的活動網站也稱mini site或campaign site。", 1],
+          ["微電影行銷", "因YouTube等視頻網站興起而大規模傳播；影片長度比商業廣告長、比電影短。", 0],
+          ["體驗行銷", "See看/Hear聽/Use用/Participate參與，刺激Sense/Feel/Think/Act/Relate感性理性因素。", 0],
+          ["遊戲化行銷", "星巴克星禮程積點案例：刺激積點慾望、預料外驚喜、提升顧客體驗與參與度。", 0],
+          ["一對一行銷類似概念", "關係行銷、資料庫行銷、直效行銷、口碑行銷四者屬之；標竿行銷benchmark marketing不屬於。", 1],
+          ["部落格特色延伸", "個人化高度空間、內容高共享性/高知識性；微網誌限140字元/70中文字內，部落格無此長度限制。", 0]
+        ]},
+        { name: "廣告投放與關鍵字行銷", points: [
+          ["關鍵字廣告計費方式", "以「點擊次數」付費CPC，非刊播時長或出現次數；範例CPC=10,000元÷2,000訪客=5元。", 1],
+          ["關鍵字密度 KW Density", "建議值5%~20%。", 0],
+          ["RTB即時競價廣告", "Real Time Bidding，運用大數據與AI找最合適出價刊登，與傳統檔期版面時段觀念不同。", 0],
+          ["GDN多媒體聯播網投放設定", "主題設定、指定刊登、內容比對；「區位行銷」不屬於GDN設定項目。", 0],
+          ["網路廣告類型辨識", "橫幅廣告、按鈕廣告、浮水印廣告、彈跳廣告——開啟網頁前插入新視窗顯示廣告＝彈跳廣告。", 1],
+          ["網路廣告vs傳統媒體特色", "互動、即時、分眾、多樣化。", 0],
+          ["SERP搜尋引擎結果頁面", "Search Engine Result Pages，搜尋行銷是透過增加SERP能見度推銷網站的方式，跟社群行銷是不同類型。", 0],
+          ["關鍵字廣告呈現方式辨識", "Google Adwords屬於搜尋引擎關鍵字廣告；Yahoo原生廣告、YouTube trueview影音廣告、FB貼文廣告皆不屬於搜尋引擎模式。", 1]
+        ]},
+        { name: "社群行銷與社群理論", points: [
+          ["McMillan與Chavis社群四大構面", "會員關係對社群歸屬感、影響力、需求整合及滿足、情感分享連結；無「消費力」這個構面。", 1],
+          ["六度分隔理論", "Six Degree of Separation，又稱小世界現象，由Stanley Milgram 1967年連鎖信實驗提出，非Kotler/McCarthy/Borden。", 1],
+          ["SoLoMo概念", "So=Social社群媒體應用；Lo=Local/Location適地性LBS；Mo=Mobile行動裝置應用。", 0],
+          ["社群行銷必掌握要點", "持續互動、創造討論、尊重個人；不含「置入商品」。", 0],
+          ["台灣社群平台特性辨識", "Dcard鎖定大學生非國小生；巴哈姆特為電玩社群論壇；愛情公寓提供虛擬寵物/小窩佈置服務，非以實體建案吸引新人。", 1],
+          ["BOE媒體分類", "Bought買來的媒體：付費版面，範圍廣但可信度低；Owned自有的媒體：官網/官方部落格/粉專；Earned賺來的媒體：口碑/病毒式行銷，難以控制但可信度高。", 1, [
+            ["Bought 買來的媒體", "付費取得的版面，觸及範圍廣但可信度較低。"],
+            ["Owned 自有的媒體", "自己掌控的官網、官方部落格、粉絲專頁。"],
+            ["Earned 賺來的媒體", "透過口碑、病毒式傳播獲得，難以控制但可信度最高。"]
+          ]],
+          ["Facebook廣告特色", "可依居住地點/年齡/興趣篩選受眾、實名制精確會員資料、提供廣告成效監看，最新廣告類型為即時通訊Messenger類型（非「全螢幕互動類型」）。", 0]
+        ]},
+        { name: "行動行銷與適地性服務", points: [
+          ["LBS定址廣告推播", "Location Based Service，需具強烈地域連結特性；全國性政令宣導不適用LBS，因無地域連結。", 1],
+          ["行動廣告三特色", "Anytime任何時間、Anyplace任何地點、Any device任何行動設備；不含「任何內容」。", 1],
+          ["推式vs拉式vs推拉式行銷策略", "Push推進策略：企業主動將訊息推向消費者，如email/簡訊行銷；關鍵字行銷屬於拉式/誘導策略，非推式。", 1, [
+            ["推式 Push", "企業主動將訊息推向消費者，如email、簡訊行銷。"],
+            ["拉式 Pull", "消費者主動搜尋才接觸到，如關鍵字行銷。"],
+            ["推拉式", "結合兩者，先拉後推或並用的複合策略。"]
+          ]],
+          ["行動版網頁/App設計原則", "字型夠大、按鈕夠大、重要內容最先顯示；避免使用彈跳式視窗。", 0]
+        ]},
+        { name: "網站優使性、UI/UX與無障礙設計", points: [
+          ["Jakob Nielsen優使性五面向", "學習度、使用效率、記憶度、錯誤率、滿意度；「訊息度」是干擾選項不屬於五面向。", 1],
+          ["UI vs UX關係", "UX使用者體驗的產出是UI設計的參考規格，UX在先、UI在後——常考成相反順序的陷阱。", 1, [
+            ["UX 使用者體驗", "先發生，關注整體使用感受與流程規劃。"],
+            ["UI 使用者介面", "在UX之後，依UX規格做出具體視覺與互動設計。"]
+          ]],
+          ["無障礙網頁開發規範", "行政院研考會2002年訂定，4項原則/3優先等級/3檢測等級/14條規範/90個標準檢測碼；2.0版標章分A/AA/AAA三級。", 0],
+          ["網站設計版面原則", "公司名稱標誌放左上角效果最佳，因閱讀習慣由左至右。", 0],
+          ["活動網站優使性原則", "參加活動填寫資料不宜過多，先收集部分資料即可。", 0]
+        ]},
+        { name: "成效評估指標", points: [
+          ["病毒式行銷實際成效指標", "「點回活動網站人數」才代表實際成效，非單純網站造訪人次。", 1],
+          ["網站黏性指標", "會員回訪率高＝對會員具「黏性」。", 0],
+          ["轉換率與提袋價計算範例", "2,000訪客×50%轉換率=1,000人購買，營業額30萬÷1,000人=提袋價300元。", 0],
+          ["影響網路活動成效關鍵因素", "創意與時事共鳴度最關鍵，非舉辦平台或程式設計優劣。", 1],
+          ["EDM活動準備清單", "建立顧客郵件清單、設計行銷文案、追蹤分析點閱率及轉化率；記錄顧客IP位址是錯誤選項（與瀏覽地點無關）。", 0]
+        ]}
+      ]
+    },
+    {
+      name: "網路行銷成效分析", short: "成效分析", count: 35, key: "c4",
+      subtopics: [
+        { name: "廣告成效計費指標", points: [
+          ["CPM", "Cost Per Mille，每千次曝光成本＝廣告預算/曝光次數×1000。", 1],
+          ["CPC", "Cost Per Click，每次點擊成本＝廣告預算/點擊次數。", 1],
+          ["CTR", "Click Through Rate，點擊率＝點擊次數/曝光次數。", 1],
+          ["CPL", "Cost Per Lead，每份名單成本＝廣告預算/名單數，常與CPA混淆。", 1],
+          ["CPA", "Cost Per Action/Acquisition，每次參與（轉換）成本，選項常故意把CPA定義套到CTR或CPL上當陷阱。", 1],
+          ["CPV", "Cost Per View，依影音廣告被觀看次數計費，與CPC/CPM/CVS並列選項。", 0],
+          ["CVS陷阱選項", "CVS指Convenience Store（便利商店），不是廣告成效指標，考題常混入CPC/CPV/CPM選項中當「不是」的答案。", 1],
+          ["Google AdWords轉換次數計算", "同一天內多次動作仍算1次轉換；隔天再次完成才會累加為2次轉換（需跨天才分開計）。", 1],
+          ["YouTube廣告四種類型", "In-Video Banner影片內嵌廣告／First Watch首頁可展開式刊頭廣告／In-Stream Video片頭影音廣告，新品刊播較具成效的組合。", 0]
+        ]},
+        { name: "網站流量與訪客指標", points: [
+          ["UV Unique Visitor", "一定期間內不重複到訪使用者人數。", 0],
+          ["PV Page View", "頁面被瀏覽總次數，「不會」區分是否為不重複使用者，此點常被出成陷阱敘述。", 1],
+          ["到達率 Reach", "不重複訪客數/全體潛在客戶（母體）百分比，類似電視收視率概念。", 1],
+          ["平均頁面瀏覽數", "總PV/造訪人次。", 0],
+          ["單次造訪停留時間", "停留時間愈長代表網站黏度愈強。", 0],
+          ["Web Session", "上網次數，常與PV、Reach並列成選項讓考生辨析定義。", 0]
+        ]},
+        { name: "轉換率與行銷漏斗", points: [
+          ["轉換率 Conversion Rate", "＝轉換數/點擊數（或/造訪人次，視題目定義的分母而定，需看清楚題幹）。", 1],
+          ["行銷漏斗正確順序", "曝光次數→造訪人數→參與活動→加入會員（由上至下，方向不可顛倒）。", 1],
+          ["漏斗分析 Funnel Analysis", "衡量轉換率的核心工具，比單純追蹤瀏覽量更能掌握使用者行為全貌。", 0]
+        ]},
+        { name: "社群媒體經營成效評估", points: [
+          ["社群經營效益評估三大項目", "網站流量、互動關係、聚合能力（分享/轉貼/引用/邀請屬聚合能力，常被誤歸類為互動關係）；另有具體指標組合：粉絲專頁人數/互動率/網站停留時間/品牌情感分數。", 1],
+          ["互動關係指標", "回應或留言篇數愈多，代表互動關係愈好。", 0],
+          ["聚合能力指標", "轉貼、分享、引用、邀請數值愈大，代表擴散力愈高。", 0],
+          ["社群指標選用原則", "需依公司自身經營目標選擇對應指標，不能一體適用，指標並非愈多愈好。", 1],
+          ["社群術語四詞辨析", "動搖率churn（客戶流失率）／漏斗分析／互動追蹤engagement tracking（衡量人們做些什麼事）／訪客持續度visitor retention（衡量多少人會再回來），常混合出成四選一。", 1],
+          ["活躍人數與銷售量關係", "「活躍人數愈高＝銷售量愈高」為錯誤敘述（活躍度不直接等同銷售量）。", 0]
+        ]},
+        { name: "網站績效分析與網路活動設計", points: [
+          ["企業網站績效分析五大目標", "瞭解經營現況、提高營運績效、增進客戶互動效果、優化使用者經驗、提高客戶忠誠度（不含「建立品牌知名度」）。", 1],
+          ["Web2.0七原則陷阱", "「利用集體智慧」是Web 2.0七原則之一，不屬於網站績效分析五大目標，常當混淆選項。", 1],
+          ["Jakob Nielsen網站優使性五面向", "學習度、使用效率、記憶度、錯誤率，另有滿意度，可用於評估網路活動成效測量。", 0],
+          ["網路活動設計吸引參與要素", "流暢動線、清楚活動說明、創新點子、獎品內容。", 0],
+          ["常見網路活動成效評估方式", "每日/總造訪人次、不重複造訪人次、平均瀏覽頁面數、會員人數與回訪率、傳銷率、擴散率、EDM寄達率與開信率等。", 0],
+          ["網站標籤陷阱", "網站標籤（Windows Title）屬於網頁優使性設計面向，「不屬於」網路活動成效指標，常見易混淆陷阱。", 1],
+          ["Google出版者工具", "Google AdWords／Google Trend／Google Webmasters屬之；Google Allo（即時通訊App）不算。", 0],
+          ["提升網路品牌價值正確做法", "設計與消費者的「接觸點」、產生「互動」元素、季節/節日提醒作用；「可提高營業收入但未見能提升網路價值」是錯誤選項。", 0]
+        ]}
+      ]
+    },
+    {
+      name: "顧客模式分析與資料庫行銷", short: "顧客資料庫", count: 25, key: "c5",
+      subtopics: [
+        { name: "顧客價值分析（RFM／CLV核心）", points: [
+          ["RFM分析", "Recency最近購買日／Frequency購買頻率／Monetary購買金額，用於評估顧客價值；數字越小越好，如1x2x3優於5x4x3。", 1, [
+            ["Recency 最近購買日", "距離上次購買的時間，數字越小代表越近期購買。"],
+            ["Frequency 購買頻率", "一定期間內購買的次數，數字越小代表越頻繁。"],
+            ["Monetary 購買金額", "累計消費金額，用來衡量貢獻度。"]
+          ]],
+          ["RFM缺點", "非評分機制、可能重複行銷同一顧客、區塊重於個人、無法預測個人未來行為。", 1],
+          ["顧客終身價值 CLV／CLTV", "Customer Lifetime Value，商家預期特定顧客在買賣關係期間帶來的淨收益金額＝利潤貢獻總值－行銷總費用。", 1]
+        ]},
+        { name: "顧客關係管理（CRM）核心概念", points: [
+          ["CRM行銷效果三目標", "顧客數量最大化、顧客價值最大化、行銷預算最小化。", 1],
+          ["eCRM顧客資料維護原則", "避免一次要求填寫過多欄位，以免使用者放棄加入會員。", 0],
+          ["顧客關係平台核心觀念", "資料庫應以顧客為中心，非以企業產品或部門為分類依據。", 1],
+          ["顧客關係管理兩大直接效用", "向上銷售Up-Selling、交叉銷售Cross-Selling。", 1, [
+            ["Up-Selling 向上銷售", "引導顧客購買更高價值/等級的商品。"],
+            ["Cross-Selling 交叉銷售", "推薦與原購買商品相關的其他商品。"]
+          ]],
+          ["資料庫行銷四大功能", "顧客價值分析、計算顧客終身價值、向上/交叉銷售、行銷決策支援系統。", 0],
+          ["許可式行銷 Permission Marketing", "消費者事先同意才發送行銷訊息的行銷方式。", 0]
+        ]},
+        { name: "顧客模式四型分類（考試核心）", points: [
+          ["過客型顧客", "短期關係、利潤貢獻度低，只是順便經過、購買最低價產品。", 1],
+          ["曇花型顧客", "短期關係、利潤貢獻度高，短期內購買高單價/大量產品但購買頻率不高。", 1],
+          ["雞肋型顧客", "長期關係、利潤貢獻度低，長期購買但耗用大量關係經營成本卻無好利潤貢獻。", 1],
+          ["朋友型顧客", "長期關係、利潤貢獻度高，具忠誠度的長期購買顧客，應加強維持關係。", 1],
+          ["顧客類型移動策略", "設法引導過客型朝曇花型或朋友型移動，而非對朋友型減少關係維繫成本。", 0]
+        ]},
+        { name: "精準行銷與資料庫行銷實務案例", points: [
+          ["精準行銷定義", "明確界定行銷目的與行銷對象，整合行動與互動的行銷方式，適用網路平台與行動通訊。", 1],
+          ["關鍵字行銷屬於精準行銷", "消費者主動查詢表示已有需求，是精準行銷的一種類型。", 0],
+          ["推薦系統", "信息過濾系統，預測用戶對物品的評分或偏好，用於交叉銷售情境，如「購買過A商品的人也購買B商品」。", 0],
+          ["LINE@口袋商店案例", "1對1商品提問功能＋關鍵字功能，屬精準行銷成功案例，非遊戲行銷/口碑行銷/病毒行銷。", 0],
+          ["Target大數據精準行銷案例", "分析會員行為歸納孕婦購買商品、訂出懷孕指數，比父親更早知道女兒懷孕。", 1],
+          ["顧客生命週期行銷流程", "接觸→轉化→增加顧客價值，常考流程圖位置排列題。", 0]
+        ]}
+      ]
+    }
+  ];
+
+  document.getElementById("brand-name").textContent = CONFIG.pageTitle;
+  document.getElementById("hero-eyebrow").textContent = CONFIG.courseName + "・備課參考";
+
+  var totalQuestions = 0, totalSub = 0, totalLeaf = 0, totalHot = 0;
+  DATA.forEach(function (cat) {
+    totalQuestions += cat.count;
+    cat.subtopics.forEach(function (sub) {
+      totalSub++;
+      sub.points.forEach(function (p) { totalLeaf++; if (p[2]) totalHot++; });
+    });
+  });
+
+  document.getElementById("stat-line").textContent = DATA.length + "大類・" + totalSub + "子主題・共" + totalQuestions + "題";
+  document.getElementById("hero-title").textContent =
+    CONFIG.heroTitle || ("把 " + totalQuestions + " 題題庫，整理成可以直接拿去排課的大綱");
+  document.getElementById("hero-desc").textContent =
+    CONFIG.heroDesc || ("依 " + DATA.length + " 大類、" + totalSub + " 個子主題整理知識點，附建議授課比重，帶 ★ 的是題庫中特別容易混淆或高頻出現的重點，排課時可以多留一點時間。");
+  document.getElementById("page-footer").innerHTML =
+    "資料來源：" + escapeHtml(CONFIG.sourceNote) + "（" + escapeHtml(CONFIG.courseCode) + "）題目解析內容整理，共 " + totalQuestions + " 題。知識點文字為AI依題庫內容摘要整理，正式授課前建議對照原始題目複核。";
+
+  var jumpnav = document.getElementById("jumpnav");
+
+  var overviewChip = document.createElement("button");
+  overviewChip.type = "button";
+  overviewChip.className = "jumpchip";
+  overviewChip.setAttribute("data-tab", "overview");
+  overviewChip.textContent = "總覽";
+  jumpnav.appendChild(overviewChip);
+
+  DATA.forEach(function (cat, i) {
+    var a = document.createElement("button");
+    a.type = "button";
+    a.className = "jumpchip";
+    a.setAttribute("data-tab", String(i));
+    a.innerHTML = '<span class="dot" style="background:var(--' + cat.key + ')"></span>' + (i + 1) + ". " + escapeHtml(cat.short || cat.name);
+    jumpnav.appendChild(a);
+  });
+
+  var planTable = document.getElementById("plan-table");
+  var header = document.createElement("div");
+  header.className = "plan-row";
+  header.innerHTML = "<span></span><span>單元</span><span class='num'>題數</span><span class='num'>比重</span><span class='num'>子主題</span><span class='num'>重點★</span><span class='num'>建議時數</span>";
+  planTable.appendChild(header);
+
+  var hoursCells = [];
+
+  DATA.forEach(function (cat, i) {
+    var hotCount = 0, subCount = cat.subtopics.length;
+    cat.subtopics.forEach(function (s) { s.points.forEach(function (p) { if (p[2]) hotCount++; }); });
+    var fraction = totalQuestions ? cat.count / totalQuestions : 0;
+    var pct = Math.round(fraction * 100);
+
+    var row = document.createElement("a");
+    row.className = "plan-row";
+    row.href = "#unit-" + i;
+    row.setAttribute("data-tab", String(i));
+    row.innerHTML =
+      '<span class="dot" style="background:var(--' + cat.key + ')"></span>' +
+      '<span class="name">' + (i + 1) + ". " + escapeHtml(cat.name) + "</span>" +
+      '<span class="num">' + cat.count + "題</span>" +
+      '<span class="num">約 ' + pct + "%</span>" +
+      '<span class="num">' + subCount + "</span>" +
+      '<span class="num">' + hotCount + "</span>" +
+      '<span class="num hours-cell">—</span>';
+    planTable.appendChild(row);
+    hoursCells.push({ el: row.querySelector(".hours-cell"), fraction: fraction });
+
+    var bar = document.createElement("div");
+    bar.className = "weightbar";
+    bar.innerHTML = '<span style="width:' + pct + '%; background:var(--' + cat.key + ')"></span>';
+    planTable.appendChild(bar);
+  });
+
+  var hoursInput = document.getElementById("hours-input");
+  hoursInput.addEventListener("input", function () {
+    var total = parseFloat(hoursInput.value);
+    var valid = !isNaN(total) && total > 0;
+    if (!valid) {
+      hoursCells.forEach(function (c) { c.el.textContent = "—"; });
+      return;
+    }
+    var totalSlots = Math.max(0, Math.round(total * 2));
+    var raw = hoursCells.map(function (c) { return c.fraction * totalSlots; });
+    var base = raw.map(Math.floor);
+    var used = base.reduce(function (a, b) { return a + b; }, 0);
+    var remainder = totalSlots - used;
+    var order = raw
+      .map(function (v, i) { return { i: i, frac: v - base[i] }; })
+      .sort(function (a, b) { return b.frac - a.frac; });
+    for (var k = 0; k < remainder && k < order.length; k++) { base[order[k].i]++; }
+    hoursCells.forEach(function (c, i) { c.el.textContent = (base[i] * 0.5).toFixed(1) + "h"; });
+  });
+
+  var unitsEl = document.getElementById("units");
+  DATA.forEach(function (cat, ci) {
+    var section = document.createElement("section");
+    section.className = "unit";
+    section.id = "unit-" + ci;
+    section.style.setProperty("--u-color", "var(--" + cat.key + ")");
+    section.style.setProperty("--u-tint", "var(--" + cat.key + "-tint)");
+
+    var head = document.createElement("div");
+    head.className = "unit-head";
+    var subCount = cat.subtopics.length;
+    head.innerHTML =
+      '<span class="idx">' + (ci + 1) + "</span>" +
+      "<h2>" + escapeHtml(cat.name) + "</h2>" +
+      '<span class="unit-meta">' + cat.count + "題・" + subCount + "個子主題</span>" +
+      '<button class="unit-copy" data-ci="' + ci + '">複製本單元大綱</button>';
+    section.appendChild(head);
+
+    var grid = document.createElement("div");
+    grid.className = "subgrid";
+    cat.subtopics.forEach(function (sub) {
+      var card = document.createElement("div");
+      card.className = "subcard";
+      var h3 = document.createElement("h3");
+      h3.textContent = sub.name;
+      card.appendChild(h3);
+      var ul = document.createElement("ul");
+      sub.points.forEach(function (p) {
+        var terms = p[3];
+        var li = document.createElement("li");
+        li.className = "pt" + (p[2] ? " hot" : "") + (terms ? " expandable" : "");
+        var termsText = terms ? terms.map(function (t) { return t[0] + " " + t[1]; }).join(" ") : "";
+        li.setAttribute("data-text", (p[0] + " " + p[1] + " " + termsText).toLowerCase());
+        li.innerHTML =
+          '<div class="pt-row">' +
+          (p[2] ? '<span class="star">★</span>' : "") +
+          "<b>" + escapeHtml(p[0]) + "</b>　" + escapeHtml(p[1]) +
+          (terms ? '<span class="expand-mark" aria-hidden="true">展開<span class="chev">▾</span></span>' : "") +
+          "</div>";
+        if (terms) {
+          var sub2 = document.createElement("ul");
+          sub2.className = "sub-terms";
+          terms.forEach(function (t) {
+            var li2 = document.createElement("li");
+            li2.innerHTML = "<b>" + escapeHtml(t[0]) + "</b>　" + escapeHtml(t[1]);
+            sub2.appendChild(li2);
+          });
+          li.appendChild(sub2);
+          li.setAttribute("tabindex", "0");
+          li.setAttribute("role", "button");
+          li.setAttribute("aria-expanded", "false");
+          li.addEventListener("click", function () { toggleExpand(li); });
+          li.addEventListener("keydown", function (e) {
+            if (e.key === "Enter" || e.key === " ") { e.preventDefault(); toggleExpand(li); }
+          });
+        }
+        ul.appendChild(li);
+      });
+      card.appendChild(ul);
+      grid.appendChild(card);
+    });
+    section.appendChild(grid);
+    unitsEl.appendChild(section);
+  });
+
+  var currentTab = "overview";
+
+  function setActiveTab(tabId, opts) {
+    opts = opts || {};
+    currentTab = tabId;
+    var isOverview = tabId === "overview";
+
+    document.body.classList.toggle("tab-single", !isOverview);
+
+    DATA.forEach(function (cat, i) {
+      var el = document.getElementById("unit-" + i);
+      var show = isOverview || String(i) === String(tabId);
+      el.style.display = show ? "" : "none";
+      el.classList.toggle("single", !isOverview && show);
+    });
+
+    Array.prototype.forEach.call(jumpnav.querySelectorAll(".jumpchip"), function (chip) {
+      chip.classList.toggle("active", chip.getAttribute("data-tab") === String(tabId));
+    });
+
+    if (!opts.skipHash) {
+      history.replaceState(null, "", "#" + (isOverview ? "overview" : "unit-" + tabId));
+    }
+    applySearchFilter();
+    if (!opts.skipScroll) window.scrollTo({ top: 0, behavior: "auto" });
+  }
+
+  document.addEventListener("click", function (e) {
+    var tabEl = e.target.closest("[data-tab]");
+    if (tabEl) {
+      e.preventDefault();
+      setActiveTab(tabEl.getAttribute("data-tab"));
+    }
+  });
+
+  document.getElementById("btn-back").addEventListener("click", function () {
+    setActiveTab("overview");
+  });
+
+  function initTabFromHash() {
+    var h = location.hash.replace("#", "");
+    var m = h.match(/^unit-(\d+)$/);
+    if (m && DATA[parseInt(m[1], 10)]) {
+      setActiveTab(m[1], { skipHash: true, skipScroll: true });
+    } else {
+      setActiveTab("overview", { skipHash: true, skipScroll: true });
+    }
+  }
+
+  function toggleExpand(li) {
+    var isOpen = li.classList.toggle("expanded");
+    li.setAttribute("aria-expanded", isOpen ? "true" : "false");
+  }
+
+  function escapeHtml(s) {
+    return String(s).replace(/[&<>"']/g, function (c) {
+      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
+    });
+  }
+
+  function outlineText(ci) {
+    var cat = DATA[ci];
+    var lines = [cat.name + "（" + cat.count + "題）", ""];
+    cat.subtopics.forEach(function (sub) {
+      lines.push("■ " + sub.name);
+      sub.points.forEach(function (p) {
+        lines.push("　" + (p[2] ? "★ " : "・") + p[0] + "：" + p[1]);
+        if (p[3]) {
+          p[3].forEach(function (t) { lines.push("　　- " + t[0] + "：" + t[1]); });
+        }
+      });
+      lines.push("");
+    });
+    return lines.join("\n");
+  }
+  function copyText(text, btn) {
+    var done = function () {
+      var old = btn.textContent;
+      btn.textContent = "已複製 ✓";
+      setTimeout(function () { btn.textContent = old; }, 1600);
+    };
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(done).catch(function () { fallbackCopy(text); done(); });
+    } else {
+      fallbackCopy(text); done();
+    }
+  }
+  function fallbackCopy(text) {
+    var ta = document.createElement("textarea");
+    ta.value = text; ta.style.position = "fixed"; ta.style.opacity = "0";
+    document.body.appendChild(ta); ta.select();
+    try { document.execCommand("copy"); } catch (e) {}
+    document.body.removeChild(ta);
+  }
+
+  document.addEventListener("click", function (e) {
+    var btn = e.target.closest(".unit-copy");
+    if (btn) copyText(outlineText(parseInt(btn.getAttribute("data-ci"), 10)), btn);
+  });
+
+  document.getElementById("btn-copyall").addEventListener("click", function (e) {
+    var all = DATA.map(function (_, i) { return outlineText(i); }).join("\n");
+    copyText(CONFIG.courseName + "　備課大綱\n\n" + all, e.currentTarget);
+  });
+
+  var termsExpanded = false;
+  document.getElementById("btn-expand-terms").addEventListener("click", function (e) {
+    termsExpanded = !termsExpanded;
+    e.currentTarget.textContent = termsExpanded ? "▴ 收合全部名詞說明" : "▾ 展開全部名詞說明";
+    Array.prototype.forEach.call(document.querySelectorAll(".subcard li.expandable"), function (li) {
+      li.classList.toggle("expanded", termsExpanded);
+      li.classList.remove("auto-expanded");
+      li.setAttribute("aria-expanded", termsExpanded ? "true" : "false");
+    });
+  });
+
+  var hotOn = false;
+  document.getElementById("btn-hot").addEventListener("click", function (e) {
+    hotOn = !hotOn;
+    e.currentTarget.classList.toggle("active", hotOn);
+    Array.prototype.forEach.call(document.querySelectorAll(".subcard li"), function (li) {
+      li.classList.toggle("pt-dim", hotOn && !li.classList.contains("hot"));
+    });
+  });
+
+  var searchInput = document.getElementById("search");
+
+  function applySearchFilter() {
+    var q = searchInput.value.trim().toLowerCase();
+    var anyMatch = false;
+    var isOverview = currentTab === "overview";
+
+    DATA.forEach(function (cat, i) {
+      var unit = document.getElementById("unit-" + i);
+      var tabEligible = isOverview || String(i) === String(currentTab);
+      if (!tabEligible) return;
+
+      var unitHasMatch = false;
+      Array.prototype.forEach.call(unit.querySelectorAll(".subcard"), function (card) {
+        var cardHasMatch = false;
+        Array.prototype.forEach.call(card.querySelectorAll("li.pt"), function (li) {
+          var isMatch = q && li.getAttribute("data-text").indexOf(q) !== -1;
+          li.classList.toggle("pt-match", !!isMatch);
+          li.classList.toggle("pt-dim", !!q && !isMatch);
+          if (isMatch) {
+            cardHasMatch = true;
+            anyMatch = true;
+            if (li.classList.contains("expandable") && !li.classList.contains("expanded")) {
+              li.classList.add("expanded", "auto-expanded");
+              li.setAttribute("aria-expanded", "true");
+            }
+          } else if (li.classList.contains("auto-expanded")) {
+            li.classList.remove("expanded", "auto-expanded");
+            li.setAttribute("aria-expanded", "false");
+          }
+        });
+        card.style.display = (!q || cardHasMatch) ? "" : "none";
+        if (cardHasMatch) unitHasMatch = true;
+      });
+
+      if (isOverview) unit.style.display = (!q || unitHasMatch) ? "" : "none";
+    });
+
+    document.getElementById("no-results").style.display = (q && !anyMatch) ? "block" : "none";
+    document.getElementById("no-results-q").textContent = q;
+  }
+
+  searchInput.addEventListener("input", applySearchFilter);
+
+  initTabFromHash();
+})();
+</script>
